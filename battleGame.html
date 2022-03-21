@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JamBattle Site</title>
+		<!--Google Fonts-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+		<!--Link to other files-->
+		<link href='battleGameCSS.css' rel='stylesheet'>
+		<link href='https://i.ibb.co/0jZjynF/jam-Battle-Logo.png' rel='icon'>
+		<script src='battleGameJS.js'></script>
+	</head>
+	<body>
+		<h1 id='title'>JamBattle Site</h1>
+		<p id='intro' class='margin'>Welcome to JamBattle!<br>This game doesn't really have very good visuals, so if you want an easier way to visualize the map or your screen isn't wide enough to show the map correctly, there's a jamboard below (hence the name Jambattle).</p>
+		<a href='https://jamboard.google.com/d/1Qgljz_zSONyuO8krM7MYkOuayBM7oScIjFgsJgDQTFo/edit?usp=sharing' target='_blank'><button class='margin' id='jamButton'>Jamboard</button></a> <button onclick='removeIntro()' id='removeIButton'>Hide intro</button>
+		<br><br><br>
+		<a href='obvious-placeholder-for-a-rulesheet' target='_blank'><button class='margin'>Rulesheet [UNFINISHED]</button></a>
+		<br>
+		<p id='teamDisplay' class='margin'>Click one of the buttons below to set your team. Make sure you and your opponent are seperate teams!</p>
+		<button id='teamButtonB' class='margin' onclick="setTeam('Blue')">Set team to blue</button>
+		<button id='teamButtonR' class='margin' onclick="setTeam('Red')">Set team to red</button>
+		<br><br>
+		<button id='startButton' class='margin' onclick="startTurn()">Start Turn</button>
+		<!--CURRENCY DISPLAY-->
+		<p class='margin' id='goldDisplay'></p>
+		<p class='margin' id='gemDisplay'></p><br>
+		<!--CHECK CONTROLS-->
+		<div id='unitCheckControls' class='hide'>
+			<label class='margin' id='unitCheckL'>CHECK: Check what units are on space </label><select id='unitCheckSpace' onChange='functE()'>
+			<option value='A'>A</option>
+			<option value='B'>B</option>
+			<option value='C'>C</option>
+			<option value='M'>M</option>
+			<option value='D'>D</option>
+			<option value='E'>E</option>
+			<option value='F'>F</option>
+			<option value='@'>@</option>
+			<option value='#'>#</option>
+			</select><input type='number' id='unitCheckSpaceNum' value='1' min='1' max='4'> <button id='unitCheckButton' onclick='checkUnits()'>Check</button>
+		</div>
+		<!--MOVEMENT CONTROLS-->
+		<div id='moveControls' class='hide'>
+			<label class='margin' id='moveL1'>MOVEMENT/ATTACK (If you're attacking, the unit type doesn't matter): Move </label><input type='number' value='1' id='moveNum' display='flex' min='1' max='10' onChange='pluralFunctA()'> <select id='moveType'>
+			<option value='M1'>M1</option>
+			<option value='M2'>M2</option>
+			<option value='D1'>D1</option>
+			<option value='B1'>B1</option>
+			<option value='B2'>B2</option>
+			<option value='S1'>S1</option>
+			<option value='S2'>S2</option>
+			</select><label id='moveL2'> unit from space </label><select id='moveSpace' onChange='functA()'>
+			<option value='A'>A</option>
+			<option value='B'>B</option>
+			<option value='C'>C</option>
+			<option value='M'>M</option>
+			<option value='D'>D</option>
+			<option value='E'>E</option>
+			<option value='F'>F</option>
+			<option value='@'>@</option>
+			<option value='#'>#</option>
+			</select><input type='number' id='moveSpaceNum' value='1' min='1' max='4'><label id='moveL2'> to space </label><select id='moveToSpace' onChange='functB()'>
+			<option value='A'>A</option>
+			<option value='B'>B</option>
+			<option value='C'>C</option>
+			<option value='M'>M</option>
+			<option value='D'>D</option>
+			<option value='E'>E</option>
+			<option value='F'>F</option>
+			<option value='@'>@</option>
+			<option value='#'>#</option>
+			</select><input type='number' id='moveToSpaceNum' value='1' min='1' max='4'>
+			      <button id='moveButton' onclick='moveButton()'>Move</button>
+		</div>
+		<!--TRAINING CONTROLS-->
+		<div id='trainControls' class='hide'>
+			<label id='trainL1' class='margin'>TRAIN UNITS: Train </label><input type='number' id='trainNum' value='1' min='1' max='10' onChange='updateTrainCost()'><select id='trainType' onChange='updateTrainCost()'>
+			<option value='M1'>M1</option>
+			<option value='M2'>M2</option>
+			<option value='D1'>D1</option>
+			<option value='B1'>B1</option>
+			<option value='B2'>B2</option>
+			<option value='S1'>S1</option>
+			<option value='S2'>S2</option>
+			</select><label id='trainL2'> units on space </label><select id='trainSpace' onChange='functD()'>
+			<option value='A'>A</option>
+			<option value='B'>B</option>
+			<option value='C'>C</option>
+			<option value='M'>M</option>
+			<option value='D'>D</option>
+			<option value='E'>E</option>
+			<option value='F'>F</option>
+			<option value='@'>@</option>
+			<option value='#'>#</option>
+			</select><input type='number' id='trainSpaceNum' value='1' min='1' max='4'><label id='costDisplay'> (COST: 2 Gold)</label> <button id='trainButton' onClick='trainUnits()'>Train</button>
+		</div>
+		<!--PLAY A CARD-->
+		<br><br>
+		<div id='cardControls' class='hide'>
+			<p class='margin' id='cardPlayP'>Your hand:</p>
+			<button id='card1' class='margin' onclick='playCard(0)' disabled>Empty</button><button id='card2' onclick='playCard(1)' disabled>Empty</button><button id='card3' onclick='playCard(2)' disabled>Empty</button><button id='card4' onclick='playCard(3)' disabled>Empty</button><button id='card5' onclick='playCard(4)' disabled>Empty</button>
+		<!--CARD SELECTORS-->
+			<div id='cardSpaceSelector' class='hide'>
+				<select id='cardSpace' onChange='functC()' class='margin'>
+					<option value='A'>A</option>
+					<option value='B'>B</option>
+					<option value='C'>C</option>
+					<option value='D'>D</option>
+					<option value='E'>E</option>
+					<option value='F'>F</option>
+				</select><input type='number' id='cardSpaceNum' value='1' min='1' max='4'><button class='hide' id='bombSpaceButton' onclick='bombCard()'>Select</button><button id='moveCardButton' class='hide' onclick='moveCard()'>Select</button>
+			</div>
+			<div id='stealTypeSelector' class='hide'>
+				<button id='stealGoldButton' class='margin' onclick="stealCard('gold')">Steal Gold</button><button id='stealGemsButton' onclick="stealCard('gems')">Steal Gems</button>
+			</div>
+		</div>
+		<!--CONSOLE-->
+		<br><br>
+		<p id='consoleP' class='margin'>Console:</p>
+		<p id='console' class='margin'>Choose a team. Then, press the Start button to begin your turn.</p>
+		<br><br>
+		<!--MAP-->
+		<p id='mapP' class='margin'>Map:</p>
+		<p id='map' class='margin'>
+|     A-1  A-3            B-2                C-2                        E-2            F-3  F-1     |<br>
+| @ /-( )--( )\ A-4  B-1  ( )-\     B-4  C-1 ( )\ M      D-1  E-4     /-( )  E-1  F-4 /( )--( )-\ # |<br>
+|[ ]           }( )--( )-/     \    ( )--( )/    [ ]    /( )--( )    /     \-( )--( ){           [ ]|<br>
+|   \--( )----/                 ( )/                \( )         \( )                 \----( )--/   |<br>
+|      A-2                      B-3                  D-2          E-3                      F-2      |</p>
+	</body>
+</html>

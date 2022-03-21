@@ -1,0 +1,55 @@
+* {
+	font-family: Tahoma;
+	overflow: scroll;
+}
+h1 {
+	text-align: center;
+	font-family: 'Titillium Web', sans-serif;
+	background-color: blue;
+	background-image: linear-gradient(#f3f708,#f200ff);
+	margin: 30px;
+	padding: 50px 30%;
+	border: 3px solid black;
+	border-radius: 50px;
+	font-size: 50px;
+}
+body {
+	background-color: cyan;
+	background-image: linear-gradient(to right, #00f6ff, #9efcff);
+}
+p {
+	font-size: 17px;
+}
+button {
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 15px;
+	font-family: 'Titillium Web', sans-serif;
+	background-color: purple;
+}
+.margin {
+	margin: 10px 0px 10px 40px;
+}
+#startButton {
+	display: none;
+}
+#console {
+	background-color: #3e7cf9;
+	border: 3px solid black;
+	border-radius: 5px;
+}
+#map {
+	background-color: #d2902d;
+	border: 2px solid #a06d22;
+	font-family: monospace;
+	border-radius: 2px;
+	white-space: pre-wrap;
+	font-size: 15px;
+	line-height: 7px;
+	text-align: center;
+	overflow: scroll;
+	height: 75px;
+}
+.hide {
+	display: none;
+}
