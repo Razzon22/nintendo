@@ -40,12 +40,12 @@ button {
 	height: 20px !important;
 }
 #upArrow {
-	position: absolute;
-	bottom: 0;
+	position: relative;
+	margin-top: 100%;
 }
 #upArrow {
-	position: absolute;
-	top: 0;
+	position: relative;
+	margin-bottom: 100%;
 }
 button:hover {
 	background-color: #d9d9d9;
