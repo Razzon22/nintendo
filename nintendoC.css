@@ -21,14 +21,12 @@ header {
 body {
 	background-color: #fe0016;
 	margin: 0px;
-	height: 100%;
-}
-html {
-	height: 100%;
 }
 p {
 	margin: auto;
 	width: 50%;
+	margin-top: 50%;
+	margin-bottom: 50%;
 }
 button {
 	text-align: center;
@@ -37,7 +35,6 @@ button {
 	border-radius: 5px;
 	width: 100%;
 	color: black;
-	height: 20px !important;
 }
 #upArrow {
 	position: relative;
