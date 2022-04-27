@@ -21,9 +21,12 @@ header {
 body {
 	background-color: #fe0016;
 	margin: 0px;
+	height: 100%;
+}
+html {
+	height: 100%;
 }
 p {
-	text-indent: 10px;
 	margin: auto;
 	width: 50%;
 }
@@ -33,6 +36,15 @@ button {
 	border: 3px solid #b5b5b5;
 	border-radius: 5px;
 	width: 100%;
+	color: black;
+}
+#upArrow {
+	position: absolute;
+	bottom: 0;
+}
+#upArrow {
+	position: absolute;
+	top: 0;
 }
 button:hover {
 	background-color: #d9d9d9;
