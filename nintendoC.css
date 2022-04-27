@@ -37,6 +37,7 @@ button {
 	border-radius: 5px;
 	width: 100%;
 	color: black;
+	height: 20px !important;
 }
 #upArrow {
 	position: absolute;
