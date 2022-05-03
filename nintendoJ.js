@@ -1,4 +1,4 @@
-document.getElementById('leftArrow').style.disabled = true;
+document.getElementById('leftArrow').disabled = true;
 let slide = 0;
 let pos = 25;
 let count = 50;
@@ -14,8 +14,8 @@ function moveElement(direction, element) {
 	document.getElementById(element).style.left = (pos+'%');
 }
 function moveSlide(direction) {
-	document.getElementById('leftArrow').style.disabled = true;
-	document.getElementById('rightArrow').style.disabled = true;
+	document.getElementById('leftArrow').disabled = true;
+	document.getElementById('rightArrow').disabled = true;
 	currentD = direction;
 	if (count === -1){
 		count = 50;
@@ -45,8 +45,8 @@ function moveSlide(direction) {
 		document.getElementById('year').style.left = '25%';
 		document.getElementById('slide').style.color = 'white';
 		document.getElementById('year').style.color = 'white';
-		document.getElementById('leftArrow').style.disabled = false;
-		document.getElementById('rightArrow').style.disabled = false;
+		document.getElementById('leftArrow').disabled = false;
+		document.getElementById('rightArrow').disabled = false;
 	}
 	else {
 		alert('Something went wrong.');
