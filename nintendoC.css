@@ -32,8 +32,7 @@ button {
 	border: 3px solid #b5b5b5;
 	border-radius: 5px;
 	width: 50%;
-	padding-top: 10px !important;
-	padding-bottom: 10px !important;
+	height: 20px !important;
 	color: black;
 }
 button:hover {
