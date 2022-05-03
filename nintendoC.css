@@ -29,6 +29,16 @@ p {
 	top: 75%;
 	left: 25%;
 }
+h2 {
+	position: absolute;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	top: 70%;
+	left: 25%;
+	font-size: 40px;
+	font-family: 'Nova Mono', monospace;
+}
 button {
 	text-align: center;
 	background-color: #cfcfcf;
