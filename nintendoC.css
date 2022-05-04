@@ -26,6 +26,7 @@ p {
 	text-align: center;
 	margin: auto;
 	width: 50%;
+	overflow-wrap: normal;
 	margin-top: 10%;
 }
 .slide {
