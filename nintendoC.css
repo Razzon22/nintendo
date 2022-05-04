@@ -27,7 +27,8 @@ p {
 	margin: auto;
 	width: 50%;
 	overflow-wrap: normal;
-	margin-top: 10%;
+	margin-top: 50px;
+	margin-bottom: 20px;
 }
 .slide {
 	margin-left: 25%;
@@ -36,7 +37,7 @@ p {
 h2 {
 	margin-left: 25%;
 	margin-right: 25%;
-	margin-top: 10%;
+	margin-top: 50px;
 	width: 50%;
 	text-align: center;
 	font-size: 40px;
