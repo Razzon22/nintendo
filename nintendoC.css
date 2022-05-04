@@ -45,12 +45,3 @@ h2 {
 	font-size: 40px;
 	font-family: 'Nova Mono', monospace;
 }
-#container {
-	border: 3px solid #f2f2f2;
-}
-.spacer {
-	width: 50%;
-	margin-left: 25%;
-	margin-right: 25%;
-	font-family: 'Nova Mono', monospace;
-}
